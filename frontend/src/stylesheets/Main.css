@@ -1,0 +1,58 @@
+:root{
+    --TextColor:#000000;
+    --TextMidtone:#9f9f9f;
+    --BackgroundColor:#ffffff;
+    --BackgroundMidtone:#f4f4f4;
+    --HorizontalMargin: 2vw;
+}
+
+body{
+    background-color: var(--BackgroundColor);
+    color: var(--TextColor);
+    transition:0.4s;
+}
+
+#navbar{
+    width: 100vw;
+    margin: 0px;
+    display: flex;
+    font-size: 2em;
+    justify-content: center;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+#logoBox{
+    margin-left: var(--HorizontalMargin);
+    margin-right:auto;
+}
+
+#logo{
+    width:10vw;
+}
+
+a {
+    text-decoration: none;
+    color: var(--TextColor);
+}
+
+.navItem{
+    width: auto;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#themeButton{
+   
+    border:none;
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+}
+
+#themeButtonBox{
+    margin-left:auto;
+    margin-right:var(--HorizontalMargin);
+    width:10vw;
+    text-align: right;
+}

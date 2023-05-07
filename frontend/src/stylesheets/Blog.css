@@ -1,0 +1,19 @@
+#blogPageContainer {
+    justify-content: center;
+    display: flex;
+}
+
+#searchInput {
+    background-color: var(--BackgroundMidtone);
+    border: none;
+    width: 50vw;
+    border-radius: 20px;
+    height: 35px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1em;
+}
+
+#searchInput:focus{
+    border:none !important;
+}
