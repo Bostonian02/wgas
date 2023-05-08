@@ -1,0 +1,49 @@
+#postContainer {
+    margin-left: var(--HorizontalMargin);
+    width: 90%;
+}
+
+#postHeader {
+    width: 100%;
+}
+
+#postHeader > h1 {
+    font-size: 6em;
+}
+
+#postAuthorAndDate {
+    display: flex;
+    justify-content: space-between;
+    font-size: 3em;
+    width: 50%;
+    margin-top: 10px;
+}
+
+#postText {
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+#tags {
+    display: flex;
+    width: fit-content;
+    /* padding: 5px; */
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    font-size: 1.5em;
+    border-radius: 10px;
+    /* margin-left: 5px; */
+    margin-right: 15px;
+}
+
+@media screen and ( max-width: 1500px ) {
+    #postHeader > h1 {
+        font-size: 4em;
+    }
+    #postText {
+        font-size: 25px;
+    }
+    #postAuthorAndDate {
+        font-size: 1.7em;
+    }
+}
