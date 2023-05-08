@@ -1,6 +1,6 @@
 import React from 'react';
 import Tag from './Tag.js';
-import image from '../images/Spanish Garden.png';
+import { Link } from 'react-router-dom';
 
 /*
 post: {
@@ -11,21 +11,15 @@ post: {
     tags
 }
 */
-function getImage(imageName){
-
-    return "../images/"+imageName;
-}
 
 function PostPreview({ post }) {
-    const url = "/:" + post.id;
-    // var src = post.img_url;
-    // console.log(getImage(post.img_url));
+    const url = "/posts?id=" + post.id;
 
     return (
         <div class="postPreview">
-            <a href={url}>
-                <div id="realbitch" class="postImage"></div>
-            </a>
+            <Link to={url}>
+                <img src={post.img_url} alt="" class="postImage"></img>
+            </Link>
             <div id="tagsContainer">
             {
                 post.tags.map(function(tag) {
