@@ -18,21 +18,25 @@ function getImage(imageName){
 
 function PostPreview({ post }) {
     const url = "/:" + post.id;
-    var src = post.img_url;
-    console.log(getImage(post.img_url));
+    // var src = post.img_url;
+    // console.log(getImage(post.img_url));
 
     return (
         <div class="postPreview">
             <a href={url}>
                 <div id="realbitch" class="postImage"></div>
             </a>
+            <div id="tagsContainer">
             {
                 post.tags.map(function(tag) {
                     return <Tag tag={tag} />;
                 })
             }
-            <p>{post.title}</p>
-            <p>{post.date}</p>
+            </div>
+            <div class="postPreviewText">
+                <h2>{post.title}</h2>
+                <p>{post.date}</p>
+            </div>
         </div>
     );
 }
