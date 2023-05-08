@@ -1,0 +1,78 @@
+#blogPageContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--HorizontalMargin);
+    padding-right: var(--HorizontalMargin);
+}
+
+#searchInput {
+    background-color: var(--BackgroundMidtone);
+    border: none;
+    width: 50vw;
+    border-radius: 20px;
+    height: 35px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#blogPostsContainer{
+    display: flex;
+    flex-direction: row !important;
+    flex-flow: row wrap;
+}
+
+.postPreview{
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.postPreview:nth-child(odd){
+    margin-right: 1vw;
+}
+.postPreview:nth-child(even){
+    margin-left: 1vw;
+}
+
+#searchInput:focus {
+    border:none !important;
+}
+
+#tagsContainer {
+    display: flex;
+}
+
+#tagContainer {
+    background-color: green;
+    width: fit-content;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+    /* margin-left: 5px; */
+    margin-right: 15px;
+}
+
+.postImage{
+    height: 450px;
+    width: 100%;
+    /* background-image: url(../images/Spanish\ Garden.png);
+    background-size: cover; */
+    margin-bottom: 25px;
+}
+
+.postPreviewText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+    .postPreview {
+      width:100%;
+    }
+  }
