@@ -4,12 +4,19 @@
     --BackgroundColor:#ffffff;
     --BackgroundMidtone:#f4f4f4;
     --HorizontalMargin: 2vw;
+    --LogoFilters:none;
+}
+
+html{
+    width:100vw !important;
+    height:100vh;
 }
 
 body{
     background-color: var(--BackgroundColor);
     color: var(--TextColor);
     transition:0.4s;
+    display:inline-block;
 }
 
 #navbar{
@@ -29,6 +36,8 @@ body{
 
 #logo{
     width:10vw;
+    filter: var(--LogoFilters);
+    
 }
 
 a {

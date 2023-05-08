@@ -1,6 +1,10 @@
 #blogPageContainer {
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    padding-left: var(--HorizontalMargin);
+    padding-right: var(--HorizontalMargin);
+
 }
 
 #searchInput {
@@ -12,8 +16,51 @@
     padding: 10px;
     padding-left: 20px;
     font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#searchInput:focus{
+#blogPostsContainer{
+    display: flex;
+    flex-direction: row !important;
+    flex-flow: row wrap;
+}
+
+.postPreview{
+    width:48%;
+}
+
+.postPreview:nth-child(odd){
+    margin-right:1vw;
+}
+.postPreview:nth-child(even){
+    margin-left:1vw;
+}
+
+#searchInput:focus {
     border:none !important;
 }
+
+#tagContainer {
+    background-color: green;
+    width: fit-content;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+.postImage{
+    height:450px;
+    width:100%;
+    background-image: url(../images/Spanish\ Garden.png);
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 400px) {
+    .postPreview {
+      width:100%;
+    }
+  }

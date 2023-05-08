@@ -2,9 +2,9 @@ import React from 'react';
 import '../stylesheets/Main.css';
 import { useState, state } from 'react';
 
-const LIGHTMODE = {TextColor:"#000000", TextMidtone:"#9f9f9f", BackgroundColor:"#ffffff", BackgroundMidtone:"#f4f4f4"};
-const DARKMODE = {TextColor:"#ffffff", TextMidtone:"#9f9f9f", BackgroundColor:"#151111", BackgroundMidtone:"#414141"};
-const NAVY = {TextColor:"#F1F6F9", TextMidtone:"#212A3E", BackgroundColor:"#212A3E", BackgroundMidtone:"#9BA4B5"};
+const LIGHTMODE = {TextColor:"#000000", TextMidtone:"#9f9f9f", BackgroundColor:"#ffffff", BackgroundMidtone:"#f4f4f4", LogoFilters:"none"};
+const DARKMODE = {TextColor:"#ffffff", TextMidtone:"#9f9f9f", BackgroundColor:"#151111", BackgroundMidtone:"#414141", LogoFilters:"invert(1)"};
+const NAVY = {TextColor:"#F1F6F9", TextMidtone:"#212A3E", BackgroundColor:"#212A3E", BackgroundMidtone:"#9BA4B5", LogoFilters:"invert(0.5) sepia(1) saturate(3) hue-rotate(203deg) brightness(2.49)"};
 const themes=[LIGHTMODE, DARKMODE, NAVY];
 
 function Navbar() {
@@ -13,6 +13,8 @@ function Navbar() {
     document.documentElement.style.setProperty('--TextMidtone', themes[themeID].TextMidtone);
     document.documentElement.style.setProperty('--BackgroundColor', themes[themeID].BackgroundColor);
     document.documentElement.style.setProperty('--BackgroundMidtone', themes[themeID].BackgroundMidtone);
+    document.documentElement.style.setProperty('--LogoFilters', themes[themeID].LogoFilters);
+
 
     return (
         <div id="navbar">
