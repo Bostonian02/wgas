@@ -15,8 +15,8 @@ html{
 body{
     background-color: var(--BackgroundColor);
     color: var(--TextColor);
-    transition:0.4s;
-    display:inline-block;
+    transition: 0.4s;
+    display: inline-block;
 }
 
 #navbar{
@@ -25,19 +25,18 @@ body{
     display: flex;
     font-size: 2em;
     justify-content: center;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #logoBox{
     margin-left: var(--HorizontalMargin);
-    margin-right:auto;
+    margin-right: auto;
 }
 
 #logo{
     width:10vw;
     filter: var(--LogoFilters);
-    
 }
 
 a {
@@ -52,16 +51,15 @@ a {
 }
 
 #themeButton{
-   
-    border:none;
-    width:60px;
-    height:60px;
+    border: none;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
 }
 
 #themeButtonBox{
-    margin-left:auto;
-    margin-right:var(--HorizontalMargin);
-    width:10vw;
+    margin-left: auto;
+    margin-right: var(--HorizontalMargin);
+    width: 10vw;
     text-align: right;
 }
