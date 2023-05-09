@@ -3,67 +3,12 @@ import Tag from '../components/Tag';
 import '../stylesheets/Post.css';
 import '../stylesheets/Main.css';
 import '../stylesheets/Blog.css';
+import formatDate from '../components/FormatDate';
 
 /*
 2023-05-08
 0123456789
 */
-
-function formatDate(isoDate) {
-    let year = isoDate.substring(0,4);
-    let month_num = isoDate.substring(5,7);
-    let day = isoDate.substring(8);
-    let month = "";
-
-    if (day[0] === '0') {
-        day = day.substring(1);
-    }
-
-    // This is a quick and dirty approach. If I think of a better way this will be changed
-    switch (month_num) {
-        case "01":
-            month = "January";
-            break;
-        case "02":
-            month = "February";
-            break;
-        case "03":
-            month = "March";
-            break;
-        case "04":
-            month = "April";
-            break;
-        case "05":
-            month = "May";
-            break;
-        case "06":
-            month = "June";
-            break;
-        case "07":
-            month = "July";
-            break;
-        case "08":
-            month = "August";
-            break;
-        case "09":
-            month = "September";
-            break;
-        case "10":
-            month = "October";
-            break;
-        case "11":
-            month = "November";
-            break;
-        case "12":
-            month = "December";
-            break;
-        default:
-            month = "Decembruary"
-    }
-
-    return `${month} ${day}, ${year}`;
-}
-
 
 function Post() {
     const [postTitle, setPostTitle] = React.useState('Example title');
