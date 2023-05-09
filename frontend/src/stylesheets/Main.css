@@ -5,6 +5,7 @@
     --BackgroundMidtone:#f4f4f4;
     --HorizontalMargin: 2vw;
     --LogoFilters:none;
+    --ScrollbarMargin:2.5vw;
 }
 
 html{
@@ -17,6 +18,7 @@ body{
     color: var(--TextColor);
     transition: 0.4s;
     display: inline-block;
+    overflow-x: hidden;
 }
 
 #navbar{
@@ -55,11 +57,21 @@ a {
     width: 60px;
     height: 60px;
     border-radius: 100%;
+    background-color: var(--BackgroundMidtone);
+    color:var(--TextMidtone);
 }
 
 #themeButtonBox{
     margin-left: auto;
-    margin-right: var(--HorizontalMargin);
+    margin-right: var(--ScrollbarMargin);
     width: 10vw;
     text-align: right;
+}
+
+.tagContainer{
+    color:black;
+}
+
+.Personal{
+    color:white;
 }
