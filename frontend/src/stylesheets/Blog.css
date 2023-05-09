@@ -1,9 +1,13 @@
+body{
+    transition:0.4s;
+}
+
 #blogPageContainer {
     justify-content: center;
     display: flex;
     flex-direction: column;
     padding-left: var(--HorizontalMargin);
-    padding-right: var(--HorizontalMargin);
+    padding-right: var(--ScrollbarMargin);
 }
 
 #searchInput {
@@ -26,15 +30,15 @@
 }
 
 .postPreview{
-    width: 48%;
+    width: 49%;
     margin-bottom: 20px;
 }
 
 .postPreview:nth-child(odd){
-    margin-right: 1vw;
+    margin-right: 1%;
 }
 .postPreview:nth-child(even){
-    margin-left: 1vw;
+    margin-left: 1%;
 }
 
 #searchInput:focus {
@@ -45,7 +49,7 @@
     display: flex;
 }
 
-#tagContainer {
+.tagContainer {
     background-color: green;
     width: fit-content;
     padding: 5px;
@@ -74,5 +78,25 @@
 @media screen and (max-width: 400px) {
     .postPreview {
       width:100%;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .postTitle{
+
+    }
+    .postDate{
+        font-weight:500;
+        font-size:1.1em;
+    }
+  }
+
+  @media screen and (min-width: 1800px) {
+    .postTitle{
+        font-size:2em;
+    }
+    .postDate{
+        font-size:1.5em;
+        font-weight: 600;
     }
   }

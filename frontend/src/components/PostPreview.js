@@ -28,8 +28,8 @@ function PostPreview({ post }) {
             }
             </div>
             <div class="postPreviewText">
-                <h2>{post.title}</h2>
-                <p>{post.date}</p>
+                <h2 class="postTitle">{post.title}</h2>
+                <p class="postDate">{post.date}</p>
             </div>
         </div>
     );
