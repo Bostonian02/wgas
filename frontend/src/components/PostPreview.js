@@ -1,11 +1,11 @@
 import React from 'react';
 import Tag from './Tag.js';
 import { Link } from 'react-router-dom';
-
+import formatDate from './FormatDate.js';
 /*
 post: {
     id,
-    img_url,
+    preview_image_url,
     title,
     date,
     tags
@@ -14,11 +14,12 @@ post: {
 
 function PostPreview({ post }) {
     const url = "/posts?id=" + post.id;
+    let date = formatDate(post.date);
 
     return (
         <div class="postPreview">
             <Link to={url}>
-                <img src={post.img_url} alt="" class="postImage"></img>
+                <img src={post.preview_image_url} alt="" class="postImage"></img>
             </Link>
             <div id="tagsContainer">
             {
@@ -29,7 +30,7 @@ function PostPreview({ post }) {
             </div>
             <div class="postPreviewText">
                 <h2 class="postTitle">{post.title}</h2>
-                <p class="postDate">{post.date}</p>
+                <p class="postDate">{date}</p>
             </div>
         </div>
     );
