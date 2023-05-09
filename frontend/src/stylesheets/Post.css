@@ -20,7 +20,7 @@
 }
 
 #postText {
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 40px;
 }
 
@@ -41,7 +41,7 @@
         font-size: 4em;
     }
     #postText {
-        font-size: 25px;
+        font-size: 20px;
     }
     #postAuthorAndDate {
         font-size: 1.7em;
