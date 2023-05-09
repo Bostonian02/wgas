@@ -23,7 +23,8 @@ body{
     margin-right: auto;
 }
 
-#blogPostsContainer{
+#blogPostsContainer {
+    animation: fadeIn 0.5s;
     display: flex;
     flex-direction: row !important;
     flex-flow: row wrap;
@@ -73,6 +74,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1 }
 }
 
 @media screen and (max-width: 400px) {
