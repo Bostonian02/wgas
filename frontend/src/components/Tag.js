@@ -38,7 +38,7 @@ function Tag({ tag }) {
     const tagColor = getTagColor(tag);
 
     return (
-        <div class={"tagContainer "+tag} style={{ backgroundColor: tagColor }}>
+        <div class={"tagContainer " + tag} style={{ backgroundColor: tagColor }}>
             {tag}
         </div>
     );
