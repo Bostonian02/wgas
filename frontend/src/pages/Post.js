@@ -59,9 +59,11 @@ function Post() {
                 <h1>{postTitle}</h1>
                 <div id="tags">
                     {
-                        postTags.map((tag, index) => {
-                            return <Tag tag={tag} />;
-                        })
+                        // Gonna experiment with having tags not show up on post previews. I think it looks a bit cleaner
+                        // I know I spent a lot of time getting this working but fuck me I guess
+                        // postTags.map((tag, index) => {
+                        //     return <Tag tag={tag} key={index}/>;
+                        // })
                     }
                 </div>
                 <div id="postAuthorAndDate">
