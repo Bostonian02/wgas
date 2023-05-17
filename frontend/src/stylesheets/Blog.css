@@ -1,5 +1,5 @@
-body{
-    transition:0.4s;
+body {
+    transition: 0.4s;
 }
 
 #blogPageContainer {
@@ -63,11 +63,11 @@ body{
 }
 
 .postImage{
-    height: 450px;
+    height: 60vh;
+    max-height: 800px;
     width: 100%;
-    /* background-image: url(../images/Spanish\ Garden.png);
-    background-size: cover; */
     margin-bottom: 25px;
+    background-position: center;
 }
 
 .postPreviewText {
@@ -81,28 +81,28 @@ body{
     100% { opacity: 1 }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 780px) {
     .postPreview {
-      width:100%;
+        width: 100%;
+    }
+    .postTitle {
+        font-size: 1em;
     }
   }
 
   @media screen and (min-width: 1400px) {
-    .postTitle{
-
-    }
-    .postDate{
-        font-weight:500;
-        font-size:1.1em;
+    .postDate {
+        font-weight: 500;
+        font-size: 1.1em;
     }
   }
 
   @media screen and (min-width: 1800px) {
-    .postTitle{
-        font-size:2em;
+    .postTitle {
+        font-size: 2em;
     }
-    .postDate{
-        font-size:1.5em;
+    .postDate {
+        font-size: 1.5em;
         font-weight: 600;
     }
   }
