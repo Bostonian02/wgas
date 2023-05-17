@@ -3,6 +3,7 @@ import { useState, state } from 'react';
 import '../stylesheets/Main.css';
 import '../stylesheets/Blog.css';
 import buildPath from '../components/BuildPath';
+import formatDate from '../components/FormatDate';
 const PostPreview = React.lazy(() => import('../components/PostPreview'));
 
 function Blog() {
@@ -63,7 +64,7 @@ function Blog() {
                     posts.filter(post => {
                         if (searchText === '') {
                             return post;
-                        } else if (post.title.toLowerCase().includes(searchText.toLowerCase()) || post.date.toLowerCase().includes(searchText.toLowerCase())) {
+                        } else if (post.title.toLowerCase().includes(searchText.toLowerCase()) || formatDate(post.date).toLowerCase().includes(searchText.toLowerCase())) {
                             return post;
                         }
                     }).sort(sortBlogPosts).map((post, index) => {
