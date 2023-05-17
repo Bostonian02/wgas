@@ -4,6 +4,7 @@ import '../stylesheets/Post.css';
 import '../stylesheets/Main.css';
 import '../stylesheets/Blog.css';
 import formatDate from '../components/FormatDate';
+import buildPath from '../components/BuildPath';
 
 /*
 2023-05-08
@@ -20,7 +21,7 @@ function Post() {
     const getPostDetails = async (postID) => {
         try
         {
-            var response = await fetch('http://localhost:3001/api/posts/' + postID,
+            var response = await fetch(buildPath('/api/posts/' + postID),
             { method: 'GET', headers: { 'Content-Type': 'application/json' } });
 
             var res = JSON.parse(await response.text());
@@ -58,9 +59,11 @@ function Post() {
                 <h1>{postTitle}</h1>
                 <div id="tags">
                     {
-                        postTags.map((tag, index) => {
-                            return <Tag tag={tag} />;
-                        })
+                        // Gonna experiment with having tags not show up on post previews. I think it looks a bit cleaner
+                        // I know I spent a lot of time getting this working but fuck me I guess
+                        // postTags.map((tag, index) => {
+                        //     return <Tag tag={tag} key={index}/>;
+                        // })
                     }
                 </div>
                 <div id="postAuthorAndDate">

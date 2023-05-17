@@ -19,12 +19,14 @@ function PostPreview({ post }) {
     return (
         <div class="postPreview">
             <Link to={url}>
-                <img src={post.preview_image_url} alt="" class="postImage"></img>
+                { /* 675 x 450 */ }
+                {/* <img src={post.preview_image_url} alt="" class="postImage" loading="lazy"></img> */}
+                <div class="postImage" loading="lazy" style={{ backgroundImage: 'url("' + post.preview_image_url + '")', backgroundSize: "cover", backgroundRepeat: "no-repeat" }}></div>
             </Link>
             <div id="tagsContainer">
             {
-                post.tags.map(function(tag) {
-                    return <Tag tag={tag} />;
+                post.tags.map(function(tag, index) {
+                    return <Tag tag={tag} key={index}/>;
                 })
             }
             </div>

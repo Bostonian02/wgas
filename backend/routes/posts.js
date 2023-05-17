@@ -35,11 +35,9 @@ router.get('/:id', (req, res) => {
     db.get('SELECT * FROM Posts WHERE id = ?', [id], (err, row) => {
         if (err) {
             res.status(500).send({ success: false, error: 'Error fetching post from database' });
-        }
-        else if (!row) {
+        } else if (!row) {
             res.status(404).send({ success: false, error: 'Post not found' });
-        }
-        else {
+        } else {
             res.status(200).send({ success: true, details: row });
         }
     });

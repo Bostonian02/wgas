@@ -8,12 +8,12 @@
     --ScrollbarMargin:2.5vw;
 }
 
-html{
-    width:100vw !important;
-    height:100vh;
+html {
+    width: 100vw !important;
+    height: 100vh;
 }
 
-body{
+body {
     background-color: var(--BackgroundColor);
     color: var(--TextColor);
     transition: 0.4s;
@@ -21,7 +21,7 @@ body{
     overflow-x: hidden;
 }
 
-#navbar{
+#navbar {
     width: 100vw;
     margin: 0px;
     display: flex;
@@ -31,13 +31,13 @@ body{
     padding-bottom: 20px;
 }
 
-#logoBox{
+#logoBox {
     margin-left: var(--HorizontalMargin);
     margin-right: auto;
 }
 
-#logo{
-    width:10vw;
+#logo {
+    width: 10vw;
     filter: var(--LogoFilters);
 }
 
@@ -46,13 +46,13 @@ a {
     color: var(--TextColor);
 }
 
-.navItem{
+.navItem {
     width: auto;
     padding-left: 35px;
     padding-right: 35px;
 }
 
-#themeButton{
+#themeButton {
     border: none;
     width: 60px;
     height: 60px;
@@ -61,17 +61,23 @@ a {
     color:var(--TextMidtone);
 }
 
-#themeButtonBox{
+#themeButtonBox {
     margin-left: auto;
     margin-right: var(--ScrollbarMargin);
     width: 10vw;
     text-align: right;
 }
 
-.tagContainer{
+.tagContainer {
     color:black;
 }
 
-.Personal{
+.Personal {
     color:white;
+}
+
+@media screen and (min-width: 1300) {
+    #logo {
+        width: 7vw;
+    }
 }
