@@ -6,11 +6,6 @@ import '../stylesheets/Blog.css';
 import formatDate from '../components/FormatDate';
 import buildPath from '../components/BuildPath';
 
-/*
-2023-05-08
-0123456789
-*/
-
 function Post() {
     const [postTitle, setPostTitle] = React.useState('Example title');
     const [postDate, setPostDate] = React.useState('April 20, 1969');
