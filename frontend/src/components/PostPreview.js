@@ -15,6 +15,7 @@ post: {
 function PostPreview({ post }) {
     const url = "/posts?id=" + post.id;
     let date = formatDate(post.date);
+    let tags = post.tags.split(",");
 
     return (
         <div class="postPreview">
@@ -25,7 +26,7 @@ function PostPreview({ post }) {
             </Link>
             <div id="tagsContainer">
             {
-                post.tags.map(function(tag, index) {
+                tags.map(function(tag, index) {
                     return <Tag tag={tag} key={index}/>;
                 })
             }
