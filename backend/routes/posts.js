@@ -2,7 +2,24 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const path = require('node:path');
+const multer = require('multer');
 const db_name = path.resolve('./db', 'WGASDatabase.db');
+
+// JSON body parser
+router.use(express.json());
+
+// Set up storage for uploaded images
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, '../frontend/public/images/thumbnails/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+
+// Create the multer middleware
+const upload = multer({ storage: storage });
 
 // Connect to SQLite database
 const db = new sqlite3.Database(db_name, (err) => {
@@ -19,12 +36,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.status(500).send({ success: false, error: 'Error fetching posts from database' });
         } else {
-            let rows_correct_tag = [];
-            rows.forEach((row) => {
-                let tags = row.tags.split(',');
-                rows_correct_tag.push({ id: row.id, title: row.title, date: row.date, body: row.body, preview_image_url: row.preview_image_url, tags: tags });
-            })
-            res.status(200).send({ success: true, posts: rows_correct_tag });
+            res.status(200).send({ success: true, posts: rows });
         }
     });
 });
@@ -42,5 +54,23 @@ router.get('/:id', (req, res) => {
         }
     });
 });
+
+// Make a new post
+router.post('/', (req, res) => {
+    const { title, body, preview_image_url, tags } = req.body;
+    db.run("INSERT INTO Posts (title, date, body, preview_image_url, tags) VALUES (?, DATE('now'), ?, ?, ?)", [title, body, preview_image_url, tags], (err) => {
+        if (err) {
+            res.status(500).send({ success: false, error: err.message});
+        } else {
+            res.status(201).send({ success: true });
+        }
+    });
+})
+
+// For preview image uploads
+router.post('/upload', upload.single('image'), (req, res) => {
+    res.status(200).json({ success: true })
+})
+
 
 module.exports = router;
