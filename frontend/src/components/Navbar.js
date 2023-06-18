@@ -23,7 +23,7 @@ function Navbar() {
         <div id="navbar">
             <a id="logoBox"><img id="logo" src="/images/Logo.png" alt="WGAS logo"/></a>
             <div class="navItem"><Link to="/">Home</Link></div>
-            <div class="navItem"><Link to="/make-a-post-dumbass/">About</Link></div>
+            <div class="navItem"><Link to="/">About</Link></div>
             <div class="navItem"><Link to="/">Contact</Link></div>
             <div id="themeButtonBox"><button id="themeButton" onClick={()=>changeTheme((themeID+1)%numThemes)}>Theme</button></div>
         </div>
