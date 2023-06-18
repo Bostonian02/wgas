@@ -1,21 +1,16 @@
 import React from 'react';
-import Tag from '../components/Tag';
+// import Tag from '../components/Tag';
 import '../stylesheets/Post.css';
 import '../stylesheets/Main.css';
 import '../stylesheets/Blog.css';
 import formatDate from '../components/FormatDate';
 import buildPath from '../components/BuildPath';
 
-/*
-2023-05-08
-0123456789
-*/
-
 function Post() {
     const [postTitle, setPostTitle] = React.useState('Example title');
     const [postDate, setPostDate] = React.useState('April 20, 1969');
-    const [postText, setPostText] = React.useState('Lorem ipsum dolor motherfucker')
-    const [postTags, setPostTags] = React.useState(['']);
+    const [postText, setPostText] = React.useState('Lorem ipsum dolor')
+    // const [postTags, setPostTags] = React.useState(['']);
 
     // Retrieve the details of a post based on its id
     const getPostDetails = async (postID) => {
@@ -32,7 +27,7 @@ function Post() {
                 let dateString = formatDate(res.details["date"])
                 setPostDate(dateString);
                 setPostText(res.details["body"]);
-                setPostTags(res.details["tags"].split(','));
+                // setPostTags(res.details["tags"].split(','));
             }
         }
         catch (e)
@@ -71,7 +66,7 @@ function Post() {
                     <p>{postDate}</p>
                 </div>
             </div>
-            <p id="postText">{postText}</p>
+            <p id="postText" dangerouslySetInnerHTML={{__html: postText}}></p>
         </div>
     );
 }

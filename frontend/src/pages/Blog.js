@@ -6,6 +6,8 @@ import buildPath from '../components/BuildPath';
 import formatDate from '../components/FormatDate';
 const PostPreview = React.lazy(() => import('../components/PostPreview'));
 
+const WAIT_TIME_MS = 5;
+
 function Blog() {
     const [isLoading, setLoading] = useState(true);
     const [searchText, setSearchText] = React.useState('');
@@ -44,7 +46,7 @@ function Blog() {
             if (!ignore) {
                 getAllBlogPosts()
             }
-        }, 5)
+        }, WAIT_TIME_MS)
         return () => { ignore = true; }
     }, []);
 
@@ -61,7 +63,7 @@ function Blog() {
             <div id="blogPostsContainer">
                 {
                     // Filter the posts based on search, sort them, then map the results
-                    posts.filter(post => {
+                    posts.filter((post) => {
                         if (searchText === '') {
                             return post;
                         } else if (post.title.toLowerCase().includes(searchText.toLowerCase()) || formatDate(post.date).toLowerCase().includes(searchText.toLowerCase())) {
@@ -70,8 +72,8 @@ function Blog() {
                     }).sort(sortBlogPosts).map((post, index) => {
                         return (
                             // Wrap the component in a 'Suspense' tag to lazy load it
-                            <Suspense fallback={ <span>Loading...</span> }>
-                                <PostPreview post={post} key={index}></PostPreview>
+                            <Suspense fallback={ <span>Loading...</span> } key={index}>
+                                <PostPreview post={post}></PostPreview>
                             </Suspense>
                         );
                     })
