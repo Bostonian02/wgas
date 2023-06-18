@@ -6,6 +6,8 @@ import buildPath from '../components/BuildPath';
 import formatDate from '../components/FormatDate';
 const PostPreview = React.lazy(() => import('../components/PostPreview'));
 
+const WAIT_TIME_MS = 5;
+
 function Blog() {
     const [isLoading, setLoading] = useState(true);
     const [searchText, setSearchText] = React.useState('');
@@ -44,7 +46,7 @@ function Blog() {
             if (!ignore) {
                 getAllBlogPosts()
             }
-        }, 5)
+        }, WAIT_TIME_MS)
         return () => { ignore = true; }
     }, []);
 
