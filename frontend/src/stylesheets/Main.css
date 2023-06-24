@@ -28,9 +28,3 @@ body {
 .Personal {
     color:white;
 }
-
-@media screen and (min-width: 1300) {
-    #logo {
-        width: 7vw;
-    }
-}
