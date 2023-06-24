@@ -20,8 +20,8 @@
 
 #themeButton {
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     background-color: var(--BackgroundMidtone);
     color:var(--TextMidtone);
@@ -40,7 +40,88 @@
     padding-right: 35px;
 }
 
+.hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--BackgroundMidtone);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    /* Positions the icon to the right */
+    margin-right: var(--ScrollbarMargin);
+    text-align: right;
+    display: none;
+
+}
+
+.navbar-menu ul {
+    display: flex;
+    padding: 0;
+    margin-top: 0;
+}
+
+.navbar-menu li {
+    list-style-type: none;
+    margin: 0 2rem;
+}
+
+.navbar-menu li Link {
+    display: block;
+    width: 100%;
+}
+
 a {
     text-decoration: none;
     color: var(--TextColor);
+}
+
+ion-icon {
+    color: var(--TextMidtone);
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    #themeButton {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-menu ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 60px);
+        border-top: 1px solid var(--TextColor);
+        background-color: var(--BackgroundColor);
+        display: none;
+    }
+    .navbar-menu.expanded ul {
+        display: block;
+    }
+    .navbar-menu li {
+        text-align: center;
+        margin: 0;
+        padding: 1;
+    }
+    .navbar-menu Link {
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+    .navbar-menu li:hover {
+        background-color: var(--BackgroundMidtone);
+    }
+}
+
+@media screen and (min-width: 1300) {
+    #logo {
+        width: 7vw;
+    }
 }
