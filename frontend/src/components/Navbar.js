@@ -22,7 +22,7 @@ function Navbar() {
 
     return (
         <nav id="navbar">
-            <Link to="/make-a-post-dumbass/" id="logoBox"><img id="logo" src="/images/Logo.png" alt="WGAS logo"/></Link>
+            <Link to="/" id="logoBox"><img id="logo" src="/images/Logo.png" alt="WGAS logo"/></Link>
             <div
                 className={ isNavExpanded ? "navbar-menu expanded" : "navbar-menu" }
             >
