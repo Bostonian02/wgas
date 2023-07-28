@@ -18,7 +18,7 @@
     filter: var(--LogoFilters);
 }
 
-#themeButton {
+.themeButton {
     border: none;
     width: 50px;
     height: 50px;
@@ -86,8 +86,12 @@ ion-icon {
     .hamburger {
         display: block;
     }
-    #themeButton {
+    .themeButton {
         display: none;
+    }
+    .themeButton.menu {
+        display: block;
+        margin: auto;
     }
 }
 
@@ -109,7 +113,8 @@ ion-icon {
     .navbar-menu li {
         text-align: center;
         margin: 0;
-        padding: 1;
+        padding: 1rem;
+        justify-content: center;
     }
     .navbar-menu Link {
         width: 100%;
@@ -117,6 +122,7 @@ ion-icon {
     }
     .navbar-menu li:hover {
         background-color: var(--BackgroundMidtone);
+        font-weight: bold;
     }
 }
 
