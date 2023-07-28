@@ -7,8 +7,6 @@ import ThemeButton from './ThemeButton';
 function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
    
-
-
     return (
         <nav id="navbar">
             <Link to="/" id="logoBox"><img id="logo" src="/images/Logo.png" alt="WGAS logo"/></Link>
@@ -25,13 +23,13 @@ function Navbar() {
                     <li>
                         <Link to="/">Contact</Link>
                     </li>
+                    {/* Hamburger Theme Button */}
+                    { isNavExpanded ? <li><ThemeButton styleClass={isNavExpanded ? "themeButton menu" : "themeButton"}></ThemeButton></li> : null }
                 </ul>
             </div>
-            {/* <div class="navItem"><Link to="/">Home</Link></div>
-            <div class="navItem"><Link to="/">About</Link></div>
-            <div class="navItem"><Link to="/">Contact</Link></div> */}
+            {/* Navbar Theme Button */}
             <div id="themeButtonBox">
-                <ThemeButton></ThemeButton>
+                <ThemeButton styleClass="themeButton"></ThemeButton>
             </div>
             <button
                 className='hamburger'
