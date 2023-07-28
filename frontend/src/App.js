@@ -16,7 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" index element={<Blog />} />
                     <Route path="/posts/" element={<Post />} />
-                    <Route path="/make-a-post-dumbass/" element={<MakePost />} />
+                    <Route path="/make-a-post/" element={<MakePost />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>
