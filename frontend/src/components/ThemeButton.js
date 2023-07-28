@@ -7,7 +7,7 @@ const DARKMODE = {TextColor:"#ffffff", TextMidtone:"#9f9f9f", BackgroundColor:"#
 //const ROYAL = {TextColor:"#a88a38", TextMidtone:"#7a662f", BackgroundColor:"#2e2045", BackgroundMidtone:"#9BA4B5", LogoFilters:"invert(0.5) sepia(1) saturate(2.55) hue-rotate(0deg) brightness(2)"};
 const themes=[LIGHTMODE, DARKMODE];
 
-function ThemeButton() {
+function ThemeButton({styleClass}) {
     const [themeID, changeTheme] = React.useState(0);
     const [numThemes, updateNumThemes] = React.useState(themes.length);
     document.documentElement.style.setProperty('--TextColor', themes[themeID].TextColor);
@@ -16,9 +16,8 @@ function ThemeButton() {
     document.documentElement.style.setProperty('--BackgroundMidtone', themes[themeID].BackgroundMidtone);
     document.documentElement.style.setProperty('--LogoFilters', themes[themeID].LogoFilters);
 
-
     return (
-        <button id="themeButton" onClick={()=>changeTheme((themeID+1)%numThemes)}>
+        <button className={styleClass} onClick={()=>changeTheme((themeID+1)%numThemes)}>
             <ion-icon name={ themeID % numThemes === 1 ? "sunny-outline" : "moon-outline" }></ion-icon>
         </button>
     );
